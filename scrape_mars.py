@@ -47,7 +47,6 @@ def scrape_mars_news():
     
     browser.quit()
     
-    
 # Scrap the featured image
 def scrape_mars_image():
     browser = init_browser()
@@ -58,24 +57,20 @@ def scrape_mars_image():
     
     # Making a beautiful soup
     html = browser.html
-    image_soup = bs(html, 'html.parser')
+    soup = bs(html, 'html.parser')
     
     # find the image in the gallery website
-    image_element = image_soup.find('div', class_='carousel_items')
-    image_element
-    
+    image_element = soup.find('div', class_='carousel_items')
+       
     # Grab the featured image url
-    featured_image_url  = image_element.find('article')['style'].replace('background-image: url(','').replace(');', '')[1:-1]
-    
+    featured_image_url = image_element.find('article')['style'].replace('background-image: url(','').replace(');', '')[1:-1]
+
     url_text = 'https://www.jpl.nasa.gov'
 
     img_url = f'{url_text}{featured_image_url}'
     
     # Make the full url
     featured_image_url = url_text + img_url
-    
-    # Display full link to featured image
-    featured_image_url 
 
     # Dictionary entry from FEATURED IMAGE
     mars_info['featured_image_url'] = featured_image_url 

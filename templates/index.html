@@ -20,16 +20,16 @@
             <a class="btn btn-lg text-white" style="background-color: darkred;" href="/scrape" role="button">Get Data!</a>
         </div>
 
-        <!-- News Section -->
+        <!-- News -->
         <div class="container">
             <h3 style="color: black">Latest Mars News</h3>
             <h6 style="color: #c1440e">{{ mars_info.news_title }}</h6>
             <p style="color: black">{{ mars_info.news_paragraph }}</p>
         </div>
-    
+        
+        <!-- Featured Mars Image and Mars Fact -->
         <div class="container">
-            <div class="row">
-                <!-- Left Image-->
+            <div class="row"> <!-- Keep the featured Mars image and Mars facts on the same row -->
                 <div class="col-lg-8 col-md-8 col-sm-12">
                     <h3 style="color: black">Featured Mars Image</h3>
                     <img src="{{ mars_info.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
@@ -44,6 +44,7 @@
             </div>
         </div>
 
+        <!-- Mars Hemisphere Pictures -->
         <h3 style="color: black; padding-top: 50px; margin-top: 100px; text-align: center;">Mars Hemispheres</h3>
         <div class="card-deck">
             <hr>
